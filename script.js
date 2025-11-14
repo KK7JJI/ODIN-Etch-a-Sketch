@@ -37,12 +37,17 @@ const etchASketch = function() {
 
     const makeANewEtchASketchArray = function (e) {
         let userInput = "";
-        while ( isNaN(+userInput) || +userInput < 1 || +userInput > 10 ) {
-            userInput = +prompt("How many squares per side? (no more than 10x10)");
+
+        let notsquare = true;
+        while ( isNaN(+userInput) || +userInput < 1 || +userInput > 100 || notsquare ) {
+            userInput = +prompt("How many squares? (enter a square, 2x2=4, 8x8=64, etc.");
+            if (Math.sqrt(+userInput) == Math.floor(Math.sqrt(+userInput))) {
+                notsquare = false;
+            }
         }
 
         removeOldEtchASketch();
-        insertNewEtchASketch(+userInput);
+        insertNewEtchASketch(Math.sqrt(+userInput));
     }
    
     const updateUnitBoxColor = function (e) {
