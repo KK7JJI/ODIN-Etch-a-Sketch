@@ -38,7 +38,7 @@ const etchASketch = function() {
     const makeANewEtchASketchArray = function (e) {
         let userInput = "";
         while ( isNaN(+userInput) || +userInput < 1 || +userInput > 10 ) {
-            userInput = +prompt("How many squares on a side? (no more than 10)");
+            userInput = +prompt("How many squares per side? (no more than 10x10)");
         }
 
         removeOldEtchASketch();
