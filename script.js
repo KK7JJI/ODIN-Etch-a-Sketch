@@ -44,6 +44,9 @@ const etchASketch = function() {
             if (Math.sqrt(+userInput) == Math.floor(Math.sqrt(+userInput))) {
                 notsquare = false;
             }
+            if (+userInput > 100) {
+                alert("The drawing area is limited to 100 squares!");
+            }
         }
 
         removeOldEtchASketch();
